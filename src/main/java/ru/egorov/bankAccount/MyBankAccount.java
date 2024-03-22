@@ -1,16 +1,11 @@
 package ru.egorov.bankAccount;
 
 import ru.egorov.transaction.TypeOperation;
-import ru.egorov.transaction.impl.TransactionHistoryImpl;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class MyBankAccount extends BankAccount {
-    public MyBankAccount() {
-        money = BigDecimal.ZERO;
-        transactionHistory = new TransactionHistoryImpl();
-    }
 
     @Override
     public BigDecimal incrementMoney(BigDecimal additionMoney) {

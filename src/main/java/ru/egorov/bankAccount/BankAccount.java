@@ -2,6 +2,7 @@ package ru.egorov.bankAccount;
 
 import ru.egorov.transaction.TransactionHistory;
 import ru.egorov.transaction.Transactional;
+import ru.egorov.transaction.impl.TransactionHistoryImpl;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -9,6 +10,11 @@ import java.util.List;
 public abstract class BankAccount {
     protected BigDecimal money;
     protected TransactionHistory transactionHistory;
+
+    public BankAccount() {
+        money = BigDecimal.ZERO;
+        transactionHistory = new TransactionHistoryImpl();
+    }
 
     /**
      * Увеличивает количество денег на счете
